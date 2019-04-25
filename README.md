@@ -17,7 +17,7 @@ for your response and make a very simple document to be easy for anyone to run y
 * Error handling
 * Testing
 
-## What doesn't work
+## What doesn't work, but implemented
 
 * Ordering by ASC|DESC
 
@@ -38,6 +38,8 @@ class CoingateConfig(AppConfig):
   api_secret_v1 = 'your api secret v1'
   
 ```
+
+Set up virtualenv and install requirements
 
 
 ```shell
