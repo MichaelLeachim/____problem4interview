@@ -13,6 +13,22 @@ for your response and make a very simple document to be easy for anyone to run y
 
 ## How to install
 
+Copy apps_sample.py in coingate folder into apps.py
+And set your api keys there.
+For example:
+
+```python
+
+class CoingateConfig(AppConfig):
+  name = 'coingate'
+  payment_button_link = 'https://coingate.com/pay/name_id_of_test_button'
+  api_key_v2 = 'your api key v2'
+  api_key_v1 = 'your api key v1'
+  api_secret_v1 = 'your api secret v1'
+  
+```
+
+
 ```shell
 
 virtualenv venv
@@ -26,7 +42,7 @@ pip install -r reqs.txt
 ```shell
 
 source venv/bin/activate;
-python manage.py runsever;
+python manage.py runserver;
 ```
 
 
