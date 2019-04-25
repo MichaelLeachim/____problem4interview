@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head itemscope="itemscope" itemtype="http://schema.org/Article">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>{{seo_title|truncatechars:50}}...</title>
+    <meta content="{{seo_description|truncatechars:140}}..." name="description" />
+    <!-- Schema.org markup for Google+ -->
+    <meta content="{{seo_title}}" itemprop="name" />
+    <meta content="{{seo_description}}" itemprop="description" />
+    
+    <!-- TODO: make image with static filter -->
+    {% if seo_image %}
+    <meta content="{{seo_image}}" itemprop="image" />
+    {% endif %}
+    
+    <!-- Twitter Card data -->
+    <meta content="summary" name="twitter:card" />
+    <meta content="{{seo_title|truncatechars:50}}..." name="twitter:title" />
+    <meta content="{{seo_description|truncatechars:180}}" name="twitter:description" />
+    <!-- TODO: make image with static filter -->
+    {% if seo_image %}
+    <meta content="{{seo_image}}" name="twitter:image" />
+    {% endif %}
+    <!-- Open Graph data -->
+    <meta content="{{seo_title|truncatechars:50}}..." property="og:title" />
+    <meta content="article" property="og:type" />
+    <meta content="{{  request.build_absolute_uri  }}" property="og:url" />
+    {% if seo_image %}
+    <meta content="{{seo_image}}" property="og:image" />
+    {% endif %}
+    <meta content="{{seo_description|truncatechars:180}}" property="og:description" />
+    <meta content="{{seo_site_name}}" property="og:site_name" />
+    
+    {% if seo_published_date %}
+    <meta content="{{seo_published_date}}" property="article:published_time" />
+    {% endif %}
+    
+    {% if seo_modified_date %}
+    <meta content="{{seo_modified_date}}" property="article:modified_time" />
+    {% endif %}
+    
+    <link rel="canonical" href="{{request.get_full_path}}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+          integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"/>
+  </head>
+  
+  <body>
+    {% block "body" %}
+    {% endblock %}
+  </body>
+</html>
