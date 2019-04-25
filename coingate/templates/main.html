@@ -1,15 +1,12 @@
 {% extends "_base.html" %}
 {% block "body" %}
-<div class="pure-g mik-container mik-pad-top-3">
-  
+<div class="pure-g mik-container mik-pad-top-5">
   <div class="pure-u-1">
-    <div class="">
-    <a href="{{payment_button_link}}" rel="noopener noreferrer nofollow" target="_blank">
-      <img alt="CoinGate Payment Button" src="https://static.coingate.com/images/buttons/1.png" />
-    </a>
-      
-    </div>
-    
+
+      <a href="{{payment_button_link}}" rel="noopener noreferrer nofollow" target="_blank">
+        <img alt="CoinGate Payment Button" src="https://static.coingate.com/images/buttons/1.png" />
+      </a>
+
     <h2>Looking Forward for your response</h2>
     
     {% if transdata_error %}
@@ -21,13 +18,13 @@
     {% endif %}
     {% if transdata %}
     
-      {% if pagination.has_prev_page %}
-        <a href="{% url 'main' %}?page={{pagination.prev_page}}">Previous page</a>
-      {% endif %}
-      {% if pagination.has_next_page %}
-        <a href="{% url 'main' %}?page={{pagination.next_page}}">Next page</a>
-      {% endif %}
-        
+    {% if pagination.has_prev_page %}
+    <a href="{% url 'main' %}?page={{pagination.prev_page}}">Previous page</a>
+    {% endif %}
+    {% if pagination.has_next_page %}
+    <a href="{% url 'main' %}?page={{pagination.next_page}}">Next page</a>
+    {% endif %}
+    
     <table class="pure-table">
       <thead>
         <tr>
@@ -56,6 +53,7 @@
     </table>
     {% endif %}
   </div>
+</div>
 </div>
 
 {% endblock %}

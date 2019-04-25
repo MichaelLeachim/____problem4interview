@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.test import TestCase
+from django.test import TestCase,tag
 from .views import MainView
 
 # Create your tests here.
@@ -27,16 +27,17 @@ class MainViewTests(TestCase):
     self.assertEqual(x.make_pagination(10,0), {u'next_page': 11, u'has_next_page': False, u'prev_page': 9, u'has_prev_page': True})
     self.assertEqual(x.make_pagination(10,9),{u'next_page': 11, u'has_next_page': False, u'prev_page': 9, u'has_prev_page': True})
     
-  # def test_getting_data_from_the_remote(self):
-  #   # import pdb; pdb.set_trace()
-  #   dat,isok = MainView().load_transaction_data()
-  #   # self.assertEqual(isok,True)
-  #   self.assertEqual(dat,True)
+  @tag("api_call")  
+  def test_getting_data_from_the_remote(self):
+    # import pdb; pdb.set_trace()
+    dat,isok = MainView().load_transaction_data()
+    self.assertEqual(isok,True)
     
-  #   datum,isok = MainView().load_transaction_data(app_token="whatever")
-  #   self.assertEqual(isok,False)
-  #   self.assertEqual(datum,{u'message': u'Auth Token is not valid', u'reason': u'BadAuthToken',
-  #                           u'reason': 'Unauthorized',u'status_code': 401})
+    datum,isok = MainView().load_transaction_data(app_token="whatever")
+    self.assertEqual(isok,False)
+    self.assertEqual(datum,{u'message': u'Auth Token is not valid', u'reason': u'BadAuthToken',
+                            u'reason': 'Unauthorized',u'status_code': 401})
+    
     
     
 

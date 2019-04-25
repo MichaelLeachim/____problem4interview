@@ -11,6 +11,17 @@ for your response and make a very simple document to be easy for anyone to run y
 
 ```
 
+## What is included
+
+* Pagination
+* Error handling
+* Testing
+
+## What doesn't work
+
+* Ordering by ASC|DESC
+
+
 ## How to install
 
 Copy apps_sample.py in coingate folder into apps.py
@@ -46,12 +57,15 @@ python manage.py runserver;
 ```
 
 
-
-## How to run (production mode)
+## How to run tests
 ```shell
 
-TODO
+source venv/bin/activate;
 
+# if you don't want to hit coingate too much
+python manage.py test --exclude-tag=api_call;
+# if you want to include hits on coingate
+python manage.py test 
 
 ```
 

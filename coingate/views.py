@@ -87,7 +87,7 @@ class MainView(TemplateView):
     else:
       trans_data,ok = self.load_transaction_data(page = self.typed_request_get('page',1,accessor=self.request.GET,),
                                                  sort = self.typed_request_get('sort','created_at_desc',accessor=self.request.GET,),
-                                                 per_page = self.typed_request_get('per_page',100,accessor=self.request.GET,))
+                                                 per_page = self.typed_request_get('per_page',2,accessor=self.request.GET,))
       
     if ok:
       context["pagination"] = self.make_pagination(trans_data["current_page"],trans_data["total_pages"])
