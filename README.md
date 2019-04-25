@@ -47,6 +47,9 @@ Set up virtualenv and install requirements
 virtualenv venv
 source venv/bin/activate
 pip install -r reqs.txt
+python manage.py makemigrations
+python manage.py migrate
+
 
 ```
 
