@@ -1,4 +1,4 @@
-# Solution of a task task for the interview
+# Solution of a task for the interview
 
 ## The problem definition
 
