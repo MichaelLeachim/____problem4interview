@@ -16,3 +16,4 @@ class CoingateConfig(AppConfig):
   api_key_v2 = '**********************'
   api_key_v1 = '**********************'
   api_secret_v1 = '********************'
+  use_fixtures = False
